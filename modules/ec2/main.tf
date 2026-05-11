@@ -22,10 +22,15 @@ provider "aws" {
   }
 }
 
+
 # Initialize the EC2 instance resource
 resource "aws_instance" "my_local_ec2" {
   ami           = var.ami_id
   instance_type = var.instance_type
+  
+  # Cấu hình mạng
+  subnet_id     = var.subnet_id
+  private_ip    = var.private_ip
 
   tags = {
     Name = "EC2-instance"

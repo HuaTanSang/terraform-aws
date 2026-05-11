@@ -32,3 +32,14 @@ variable "endpoint_url" {
   type        = string
   default     = "http://localhost:4566"
 }
+
+variable "subnet_id" {
+  description = "ID of the Subnet where the EC2 instance will be deployed"
+  type        = string
+}
+
+variable "private_ip" {
+  description = "Private IP for EC2"
+  type        = string
+  default     = null
+}

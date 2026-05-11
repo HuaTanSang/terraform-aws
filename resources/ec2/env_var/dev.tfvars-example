@@ -1,0 +1,15 @@
+region = "your-region" 
+access_key = "your-access_key"
+secret_key = "your-secret_key"
+endpoint_url = "http://localhost:4566"
+# VPC CIDR block
+cidr_block = "10.0.0.0/16"
+# Subnet CIDR blocks
+public_subnet_cidr_block = "10.0.1.0/24"
+private_subnet_cidr_block = "10.0.2.0/24"
+# Availability Zone
+az_1a = "us-east-1a"
+# EC2 instance configuration
+instance_type = "t2.micro" 
+ami_id = "your-ami"
+subnet_id = "your-suubnet"

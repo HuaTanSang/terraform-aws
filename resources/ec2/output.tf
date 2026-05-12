@@ -14,6 +14,11 @@ output "ec2_public_internal_ip" {
 }
 
 output "ec2_public_external_ip" {
-  description = "Public IP assigned automatically to EC2 Public (Used for SSH/Access from Internet)"
-  value       = module.ec2_public.public_ip 
+  description = "Public IP (Elastic IP) tĩnh của EC2 Public"
+  value       = aws_eip.ec2_public_eip.public_ip 
+}
+
+output "nat_gateway_public_ip" {
+  description = "IP address of NAT Gateway"
+  value       = module.vpc.nat_gateway_ip
 }

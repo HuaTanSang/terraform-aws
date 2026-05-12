@@ -43,3 +43,9 @@ variable "private_ip" {
   type        = string
   default     = null
 }
+
+variable "associate_public_ip" {
+  description = "Xác định có gán Public IP cho EC2 hay không"
+  type        = bool
+  default     = false
+}

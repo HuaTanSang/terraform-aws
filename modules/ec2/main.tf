@@ -31,7 +31,8 @@ resource "aws_instance" "my_local_ec2" {
   # Cấu hình mạng
   subnet_id     = var.subnet_id
   private_ip    = var.private_ip
-
+  associate_public_ip_address = var.associate_public_ip
+  
   tags = {
     Name = "EC2-instance"
   }

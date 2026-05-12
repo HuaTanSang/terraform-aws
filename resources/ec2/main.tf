@@ -53,9 +53,21 @@ module "ec2_public" {
   ami_id        = var.ami_id
   instance_type = var.instance_type
   
+  associate_public_ip = true
   # Chỉ định ID của Public Subnet
   subnet_id     = module.vpc.public_subnet_id
   
   # Chỉ định IP nội bộ thuộc dải Public Subnet (10.0.1.0/24)
   private_ip    = "10.0.1.50" 
+}
+
+resource "aws_eip" "ec2_public_eip" {
+  domain = "vpc"
+  
+  # Gắn EIP này vào con EC2 Public thông qua instance_id
+  instance = module.ec2_public.instance_id 
+  
+  tags = {
+    Name = "EC2-Public-EIP"
+  }
 }
